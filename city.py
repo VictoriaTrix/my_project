@@ -38,11 +38,11 @@ async def get_cities(country: str):
                     return []
 
                 data = await response.json()
-                print(f"📌 Данные API для {country}: {data}")  
+                print(f" Данные API для {country}: {data}")  
 
                 if "geonames" in data:
                     CITIES[country] = [city["name"] for city in data["geonames"]]
-                    print(f"✅ Найдено {len(CITIES[country])} городов.")
+                    print(f"Найдено {len(CITIES[country])} городов.")
                     return CITIES[country]
                 else:
                     print("⚠️ В ответе нет данных о городах!")
